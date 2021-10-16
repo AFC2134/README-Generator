@@ -18,5 +18,6 @@
   "homepage": "https://github.com/AFC2134/README-Generator#readme",
   "dependencies": {
     "inquirer": "^8.2.0"
-  }
+  },
+  "devDependencies": {}
 }

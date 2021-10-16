@@ -26,27 +26,38 @@ function renderLicenseSection(license) {}
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+   ${renderLicenseBadge(data)}
+   ## Table of Contents
+  * [Description](https://github.com/${data.github}/${data.repo}#description)
+  * [Installation](https://github.com/${data.github}/${data.repo}#installation)
+  * [Usage](https://github.com/${data.github}/${data.repo}#usage)
+  * [License](https://github.com/${data.github}/${data.repo}#license)
+  * [Contributing](https://github.com/${data.github}/${data.repo}#contributing)
+  * [Tests](https://github.com/${data.github}/${data.repo}#tests)
+  * [Questions](https://github.com/${data.github}/${data.repo}#questions)
+
+  ## Description
+   ${data.description}
+
+  ## Installation
+    ${data.installation}
+
+  ## Usage
+    ${data.usage}
+
+  ## License  
+    This application is covered under the ${data.license} license.
+  ## Contributing
+    ${data.contributing}
+
+  ## Tests
+    ${data.tests}
+
+  ## Questions
+  Click here to see ${data.github}'s page! https://github.com/${data.github}  
+  Have any questions? Feel free to email me at ${data.email} and I will gladly answer you as soon as I can!
 
 `;
 }
 
 module.exports = generateMarkdown;
-
-const writeFile = fileContent => {
-  return new Promise((resolve, reject) => {
-      fs.writeFile('./dist/index.html', fileContent, err => {
-          // if there's an error, reject the Promise and send the error to the Promise's `.catch()` method
-          if (err) {
-              reject(err);
-              // return out of the function here to make sure the Promise doesn't accidentally execute the resolve() function as well
-              return;
-          }
-
-          // if everything went well, resolve the Promise and send the successful data to the `.then()` method
-          resolve({
-              ok: true,
-              message: 'File created!'
-          });
-      });
-  });
-};
