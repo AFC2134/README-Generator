@@ -1,23 +1,34 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {
-  if (license === 'MIT') {
+function renderLicenseBadge(data) {
+  
+  if (data.license === 'MIT') {
     return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]'
   };
-  if (license === 'Boost 1.0') {
-    return '[![License: Boost 1.0](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)]'
-  };
-  if (license === 'GMU GPL v3') {
-    return '[![License: GMU](https://img.shields..io/badge/License-GPLv3-blue.svg)]'
+  if (data.license === 'Apache 2.0') {
+    return '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)]'
+  } 
+  if (data.license === 'GNU GPL v3') {
+    return '[![License: GMU](https://img.shields.io/badge/License-GPLv3-blue.svg)]'
   }
-  if (license === 'Apache2.0') {
-    return '[![License: Apache2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)]'
-  } else return ""
-}
+  if (data.license === 'Boost 1.0') {
+    return '[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)]'
+  }
+  if (data.license === 'no license') {
+    return ' '
+  }
+};
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+
+// NO LICENSE IS AN OPTION IN THE LICENSE CHOICES ARRAY ON LINE 57 OF INDEX.JS,
+// SELECTING NO LICENSE WILL GIVE YOU AN EMPTY STING WHERE LINK WOULD USUALLY RENDER
+
+
+
+
+function renderLicenseLink(license) { }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
@@ -47,6 +58,7 @@ function generateMarkdown(data) {
 
   ## License  
     This application is covered under the ${data.license} license.
+ 
   ## Contributing
     ${data.contributing}
 
@@ -55,7 +67,7 @@ function generateMarkdown(data) {
 
   ## Questions
   Click here to see ${data.github}'s page! https://github.com/${data.github}  
-  Have any questions? Feel free to email me at ${data.email} and I will gladly answer you as soon as I can!
+  Feel free to email me at ${data.email} and I will gladly answer any questions you have!
 
 `;
 }

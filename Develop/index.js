@@ -54,7 +54,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'What license would you like to use?',
-        choices: ['Apache 2.0', 'GNU GPL v3', 'Boost 1.0', 'MIT']
+        choices: ['Apache 2.0', 'GNU GPL v3', 'Boost 1.0', 'MIT', 'no license']
     }
 ];
 
