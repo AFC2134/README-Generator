@@ -1,5 +1,5 @@
 # 
-    
+   [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)]
    ## Table of Contents
   * [Description](https://github.com//#description)
   * [Installation](https://github.com//#installation)
@@ -19,7 +19,7 @@
     
 
   ## License  
-    This application is covered under the no license license.
+    This application is covered under the Apache 2.0 license.
  
   ## Contributing
     
